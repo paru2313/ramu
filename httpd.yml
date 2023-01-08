@@ -1,5 +1,5 @@
 ---
-- hosts: myappservers
+- hosts: newserver
   tasks: 
   - name: install apache
     yum: 

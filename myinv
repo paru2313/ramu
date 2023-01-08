@@ -1,0 +1,7 @@
+[webservers]
+3.110.175.252 ansible_user=ec2-user 
+65.2.123.62 ansible_user=ec2-user 
+[appservers]
+13.127.180.112 ansible_user=ec2-user 
+[newserver]
+52.66.82.230 ansible_user=centos 

@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name:java
+    yum:
+	name: java
+	state: latest
+  - name: tomcat download
+    get_url:
+      url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz
+	dest: /opt
+  -	name: untar
+    unarchive:
+      src: /opt/apache-tomcat-9.0.70.tar.gz
+      dest: /opt
+      remote_src: true
+  - name: rename
+    command: mv /opt/apache-tomcat-9.0.70 /opt/tomcat-1
+  - name: start tomcat
+    shell: nohub /opt/tomcat/bin/startup.sh
